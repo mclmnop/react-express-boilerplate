@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+//import { CreateTeam, Teams } from "./components";
+import CreateTeam from "./components/CreateTeam";
+import Teams from "./components/Teams";
 
 class App extends Component {
   constructor(props) {
@@ -11,7 +15,7 @@ class App extends Component {
   }
 
   fetchData = () => {
-    axios.get('/api/data') // You can simply make your requests to "/api/whatever you want"
+    axios.get('https://statsapi.web.nhl.com/api/v1/teams') // You can simply make your requests to "/api/whatever you want"
     .then((response) => {
       // handle success
       console.log(response.data) // The entire response from the Rails API
@@ -25,12 +29,21 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <h1>{ this.state.message }</h1>
-        <button onClick={this.fetchData} >
-          Fetch Data
-        </button>        
-      </div>
+      <Router>
+        <Switch>
+          <Route path="/teams" exact component={() => <Teams />} />
+          <Route path="/teams/new" exact component={() => <CreateTeam />} />
+        </Switch>
+        <div className="App">
+          <h1>{ this.state.message }</h1>
+          <button onClick={this.fetchData} >
+            Fetch Data
+          </button>        
+        </div>
+
+
+
+      </Router>
     );
   }
 }
