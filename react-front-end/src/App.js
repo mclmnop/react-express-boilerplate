@@ -33,13 +33,22 @@ class App extends Component {
         <Switch>
           <Route path="/teams" exact component={() => <Teams />} />
           <Route path="/teams/new" exact component={() => <CreateTeam />} />
-        </Switch>
-        <div className="App">
+          
+          <Route path="/" exact component={() => <div className="App">
           <h1>{ this.state.message }</h1>
           <button onClick={this.fetchData} >
             Fetch Data
           </button>        
-        </div>
+        </div>}
+           />
+          
+        </Switch>
+  {/*       <div className="App">
+          <h1>{ this.state.message }</h1>
+          <button onClick={this.fetchData} >
+            Fetch Data
+          </button>        
+        </div> */}
 
 
 

@@ -7,9 +7,9 @@ return (
   <MDBRow>
     <MDBCol md="6">
       <form>
-        <p className="h4 text-center mb-4">Sign up</p>
+        <p className="h4 text-center mb-4">Incris ton équipe</p>
         <label htmlFor="defaultFormRegisterNameEx" className="grey-text">
-          Your name
+          Prénom
         </label>
         <input type="text" id="defaultFormRegisterNameEx" className="form-control" />
         <br />
@@ -23,10 +23,14 @@ return (
         </label>
         <input type="email" id="defaultFormRegisterConfirmEx" className="form-control" />
         <br />
-        <label htmlFor="defaultFormRegisterPasswordEx" className="grey-text">
-          Your password
+        <label htmlFor="defaultFormTeamNameEx" className="grey-text">
+          Nom de l'équipe
         </label>
-        <input type="password" id="defaultFormRegisterPasswordEx" className="form-control" />
+        <input type="text" id="defaultFormTeamNameEx" className="form-control" />
+  {/*       <label htmlFor="defaultFormRegisterPasswordEx" className="grey-text">
+          Your password
+        </label> 
+        <input type="password" id="defaultFormRegisterPasswordEx" className="form-control" /> */}
         <div className="text-center mt-4">
           <MDBBtn color="unique" type="submit">
             Register
