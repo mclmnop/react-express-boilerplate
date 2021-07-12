@@ -15,7 +15,7 @@ CREATE TABLE users (
   fpts_round2 INTEGER,
   fpts_round3 INTEGER,
   fpts_total INTEGER,
-  player_id_api INTEGER,
+  player_id_api INTEGER REFERENCES cities(id) ON DELETE CASCADE
 );
  
 CREATE TABLE players (
@@ -25,13 +25,12 @@ CREATE TABLE players (
   assists INTEGER,
   game_winning_goals INTEGER,
   nhl_team VARCHAR(255) NOT NULL,
-  team_name VARCHAR(255) NOT NULL,
   is_guardian BOOLEAN NOT NULL,
   fpts_round1 INTEGER,
   fpts_round2 INTEGER,
   fpts_round3 INTEGER,
   fpts_total INTEGER,
-  player_id_api VARCHAR(255) NOT NULL,
+  player_id_api INTEGER NOT NULL
 );
 /*
 CREATE TABLE rooms (
