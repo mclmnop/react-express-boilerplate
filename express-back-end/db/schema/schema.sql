@@ -5,24 +5,35 @@ DROP TABLE IF EXISTS choices CASCADE;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY NOT NULL,
-  first_name VARCHAR(255) NOT NULL,
-  last_name VARCHAR(255) NOT NULL,
-  team_name VARCHAR(255) NOT NULL,
-  email VARCHAR(255) NOT NULL,
-  avatar VARCHAR(255) NOT NULL,
-  is_owner BOOLEAN NOT NULL,
+  full_name VARCHAR(255) NOT NULL,
+  goals INTEGER,
+  assists INTEGER,
+  game_winning_goals INTEGER,
+  nhl_team VARCHAR(255) NOT NULL,
+  is_guardian BOOLEAN NOT NULL,
+  fpts_round1 INTEGER,
+  fpts_round2 INTEGER,
+  fpts_round3 INTEGER,
+  fpts_total INTEGER,
+  player_id_api INTEGER,
 );
-/* 
+ 
 CREATE TABLE players (
   id SERIAL PRIMARY KEY NOT NULL,
-  first_name VARCHAR(255) NOT NULL,
-  last_name VARCHAR(255) NOT NULL,
+  full_name VARCHAR(255) NOT NULL,
+  goals INTEGER,
+  assists INTEGER,
+  game_winning_goals INTEGER,
+  nhl_team VARCHAR(255) NOT NULL,
   team_name VARCHAR(255) NOT NULL,
-  email VARCHAR(255) NOT NULL,
-  avatar VARCHAR(255) NOT NULL,
-  is_owner BOOLEAN NOT NULL,
+  is_guardian BOOLEAN NOT NULL,
+  fpts_round1 INTEGER,
+  fpts_round2 INTEGER,
+  fpts_round3 INTEGER,
+  fpts_total INTEGER,
+  player_id_api VARCHAR(255) NOT NULL,
 );
-
+/*
 CREATE TABLE rooms (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
